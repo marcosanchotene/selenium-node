@@ -1,0 +1,15 @@
+Should login successfully with valid username and password
+
+Should display locked out message with locked out username and valid password
+
+Should display wrong images after logging in with problem_user username and valid password
+
+Should take around 7 seconds to log in with performance_glitch_user and valid password
+
+Should display error message when attempting to log in with valid username and invalid password
+
+Should display error message when attempting to log in without username and password
+
+Should display error message when attempting to log in with valid username but without password
+
+Should display error message when attempting to log in without username but with valid password
