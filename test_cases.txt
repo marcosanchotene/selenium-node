@@ -1,15 +1,62 @@
-Should login successfully with valid username and password
+TC 01 - Should login successfully with valid username and password by clicking on button
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “standard_user” in the “Username” input field;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. The “Products” page (https://www.saucedemo.com/inventory.html) should be loaded successfully.
 
-Should display locked out message with locked out username and valid password
+TC 02 - Should login successfully with valid username and password by typing “Enter” key
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “standard_user” in the “Username” input field;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Type the “Enter” key;
+    5. The “Products” page (https://www.saucedemo.com/inventory.html) should be loaded  successfully.
 
-Should display wrong images after logging in with problem_user username and valid password
+TC 03 - Should display locked out message with “locked_out_user” username and valid password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “locked_out_user” in the “Username” input field;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. An error message displaying “Epic sadface: Sorry, this user has been locked out.” should appear right below the “Password” input field.
 
-Should take around 7 seconds to log in with performance_glitch_user and valid password
+TC 04 - Should display wrong images after logging in with “problem_user” username and valid password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “problem_user” in the “Username” input field;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. The “Products” page (https://www.saucedemo.com/inventory.html) should be loaded, but all product images should be the same (a dog holding a ball with his mouth).
 
-Should display error message when attempting to log in with valid username and invalid password
+TC 05 - Should take around 7 seconds to log in with “performance_glitch_user” and valid password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “performance_glitch_user” in the “Username” input field;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. The “Products” page (https://www.saucedemo.com/inventory.html) should be loaded, but only after around 7 seconds.
 
-Should display error message when attempting to log in without username and password
+TC 06 - Should display error message when attempting to log in with valid username and invalid password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “standard_user” in the “Username” input field;
+    3. Type “no_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. An error message displaying “Epic sadface: Username and password do not match any user in this service” should appear right below the “Password” input field.
 
-Should display error message when attempting to log in with valid username but without password
+TC 07 - Should display error message when attempting to log in without username and password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Leave the “Username” input field blank;
+    3. Leave the “Password” input field blank;
+    4. Click the “Login” button;
+    5. An error message displaying “Epic sadface: Username is required” should appear right below the “Password” input field.
 
-Should display error message when attempting to log in without username but with valid password
+TC 08 - Should display error message when attempting to log in with valid username but without password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Type “standard_user” in the “Username” input field;
+    3. Leave the “Password” input field blank;
+    4. Click the “Login” button;
+    5. An error message displaying “Epic sadface: Password is required” should appear right below the “Password” input field.
+
+TC 09 - Should display error message when attempting to log in without username but with valid password
+    1. Load Swag Labs homepage (https://www.saucedemo.com/);
+    2. Leave the “Username” input field blank;
+    3. Type “secret_sauce” in the “Password” input field;
+    4. Click the “Login” button;
+    5. An error message displaying “Epic sadface: Username is required” should appear right below the “Password” input field.

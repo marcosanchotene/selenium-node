@@ -3,4 +3,5 @@ exports.Homepage = class Homepage {
     static USERNAME_INPUT_ID = 'user-name'
     static PASSWORD_INPUT_ID = 'password'
     static LOGIN_BUTTON_ID = 'login-button'
+    static LOGIN_ERROR_MESSAGE_CSS = '[data-test="error"]'
 }
