@@ -1,4 +1,4 @@
-const { Builder } = require('selenium-webdriver')
+const webdriver = require('selenium-webdriver')
 const { BrowseTheWeb } = require('../abilities/browse-the-web')
 const { User } = require('../actors/user')
 const { AmISignedIn } = require('../questions/am_i_signed_in')
@@ -11,19 +11,30 @@ const { expect } = require('chai')
 describe("Login test suite", function() {
     let driver
 
-    beforeEach(function() {
-        driver = new Builder().forBrowser('chrome').build()
+    beforeEach(async function() {        
+        driver = await new webdriver.Builder()        
+        .forBrowser('chrome')
+        .build()
     })
 
-    afterEach(function() {
-        driver.quit()
+    afterEach(async function() {
+        await driver.quit()
     })
 
-    it("Should login successfully with valid username and password", async function() {
-        const user = new User(users.STANDARD_USER, users.PASSWORD)
+    it("Should login successfully with valid username and password by clicking on button", async function() {
+        const user = new User(users.STANDARD_USER.username, users.STANDARD_USER.password)
         await user.can(BrowseTheWeb.with(driver))
         await user.attemptsTo(Navigate.to(Homepage.URL))
-        await user.attemptsTo(SignIn.onHomepage())
+        await user.attemptsTo(SignIn.clickingButton())
+        result = await user.asks(AmISignedIn.onInventoryPage())
+        expect(result).to.be.true
+    })
+
+    it("Should login successfully with valid username and password by typing “Enter” key", async function() {
+        const user = new User(users.STANDARD_USER.username, users.STANDARD_USER.password)
+        await user.can(BrowseTheWeb.with(driver))
+        await user.attemptsTo(Navigate.to(Homepage.URL))
+        await user.attemptsTo(SignIn.typingEnterKey())
         result = await user.asks(AmISignedIn.onInventoryPage())
         expect(result).to.be.true
     })
