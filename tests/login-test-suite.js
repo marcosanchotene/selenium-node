@@ -17,7 +17,7 @@ describe("Login test suite", function() {
 
     beforeEach(async function() {        
         driver = await new webdriver.Builder()        
-        .forBrowser(process.env.npm_config_browser)
+        .forBrowser(process.env.npm_config_browser || 'chrome')
         .build()
     })
 
