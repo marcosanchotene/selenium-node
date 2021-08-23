@@ -1,6 +1,6 @@
 # UI automated tests
 This project contains code for user interface (UI) automated tests made
- with Node.js, Selenium, Mocha and Chai for the login feature of [this website](https://www.saucedemo.com/). 
+ with [Node.js](https://nodejs.org/), [Selenium](https://www.selenium.dev/), [Mocha](https://mochajs.org/) and [Chai](https://www.chaijs.com/) for the login feature of [this website](https://www.saucedemo.com/). 
  The project follows a simplified version of the [screenplay pattern implemented by the Serenity/JS test automation
  framework](https://serenity-js.org/handbook/design/screenplay-pattern.html).
  Tests can run locally on Unix based systems, like Linux or macOS, and Windows. A screenshot will be saved
