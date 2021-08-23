@@ -10,14 +10,14 @@ const { expect } = require('chai')
 const { IsLockedOutErrorDisplayed } = require('../questions/is-locked-out-error-displayed')
 const { IsUnmatchErrorDisplayed } = require('../questions/is-unmatch-error-displayed')
 const { IsUsernameRequiredErrorDisplayed } = require('../questions/is-username-required-error-displayed')
-const { IsPasswordRequiredErrorDisplayed } = require('../questions/is-username-required-error-displayed copy')
+const { IsPasswordRequiredErrorDisplayed } = require('../questions/is-password-required-error-displayed')
 
 describe("Login test suite", function() {
     let driver
 
     beforeEach(async function() {        
         driver = await new webdriver.Builder()        
-        .forBrowser('chrome')
+        .forBrowser(process.env.npm_config_browser)
         .build()
     })
 
